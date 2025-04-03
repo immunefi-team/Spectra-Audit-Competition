@@ -84,7 +84,7 @@ contract RateOracleRegistry is IRateOracleRegistry, AccessManagedUpgradeable {
         if (_pt == address(0) || _rateOracle == address(0)) {
             revert AddressError();
         }
-        // @dev: do not overwrite exisiting bindings
+        // @dev: do not overwrite existing bindings
         if (ptToRateOracle[_pt] != address(0)) {
             revert RegistryOverwriteAttempt(_pt, ptToRateOracle[_pt]);
         }
